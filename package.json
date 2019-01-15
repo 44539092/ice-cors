@@ -1,6 +1,6 @@
 {
   "name": "ice-cors",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "express.js 跨域CORS中间件",
   "main": "index.js",
   "scripts": {
