@@ -8,7 +8,11 @@
  let cors=require('ice-cors');
  app.use(cors());
 ```
-### 关闭option请求拦截
+### 配置cors
 ```javascript
-  app.use(cors(optionIntercept=false))
+
+app.use(cors({
+    optionIntercept: false,//关闭option请求拦截
+    customAllowHeaders:['token'],//添加自定义的Access-Control-Allow-Headers
+}));
 ```

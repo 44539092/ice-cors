@@ -1,11 +1,18 @@
-let cors=(optionIntercept=true) => {
+let cors=(options={}) => {
+    let allowHeaders='';
+    if(options.customAllowHeaders){
+        for (let header of options.customAllowHeaders){
+            allowHeaders+=`,${header}`
+        }
+    }
     return (req,res,next)=>{
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Methods", "*");
         res.header("Access-Control-Allow-Credentials", "true");
-        res.header("Access-Control-Allow-Headers", "Content-Type,Access-Token");
+        res.header("Access-Control-Allow-Headers", `Content-Type,Access-Token${allowHeaders}`);
         res.header("Access-Control-Expose-Headers", "*");
-        if(req.method==='OPTIONS'&&optionIntercept){
+        console.log(options.optionIntercept);
+        if(req.method==='OPTIONS'&&options.optionIntercept){
             res.send('');
             return;
         }
