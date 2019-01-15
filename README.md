@@ -6,5 +6,9 @@
 ```javascript
  let app = express();
  let cors=require('ice-cors');
- app.use(cors);
+ app.use(cors());
+```
+### 关闭option请求拦截
+```javascript
+  app.use(cors(optionIntercept=false))
 ```

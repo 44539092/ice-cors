@@ -1,15 +1,18 @@
 {
   "name": "ice-cors",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.4",
+  "description": "express.js 跨域CORS中间件",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "node-cors",
-    "cors"
+    "cors",
+    "express",
+    "express-cors"
   ],
+  "repository": "ice13140167960/ice-cors",
   "author": "ice",
   "license": "ISC",
   "devDependencies": {

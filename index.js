@@ -1,11 +1,11 @@
-let cors=() => {
+let cors=(optionIntercept=true) => {
     return (req,res,next)=>{
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Methods", "*");
         res.header("Access-Control-Allow-Credentials", "true");
         res.header("Access-Control-Allow-Headers", "Content-Type,Access-Token");
         res.header("Access-Control-Expose-Headers", "*");
-        if(req.method==='OPTIONS'){
+        if(req.method==='OPTIONS'&&optionIntercept){
             res.send('');
             return;
         }
